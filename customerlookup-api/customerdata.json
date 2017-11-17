@@ -1,0 +1,62 @@
+[
+    {
+        "phonenumber": "30325259329",
+        "zipcode": "30301",
+        "dob": "05/05",
+        "info": {
+            "name": ["Brad Doebelin"],
+            "lastest_date": "05/18/17",
+            "rewards_points": 8.3,
+            "available_notes": [
+                "8255-4455-3344-2233; Access Code 123",
+                "8255-4455-3344-2444; Access Code 234"
+            ],
+            "available_notes_value": "40",
+            "pbpd_available": 1,
+            "current_balance": 1452,
+            "statement_balance": 2452,
+            "available_credit": 5548,
+            "due_date": "06/15/17"
+        }
+    },
+    {
+        "phonenumber": "30325259328",
+        "zipcode": "30302",
+        "dob": "06/06",
+        "info": {
+            "name": ["Sarah Conor"],
+            "lastest_date": "08/21/17",
+            "rewards_points": 6.4,
+            "available_notes": [
+                "8255-4455-2233-1111; Access Code 456",
+                "8255-4455-2233-1333; Access Code 567"
+            ],
+            "available_notes_value": "20",
+            "pbpd_available": 2,
+            "current_balance": 800,
+            "statement_balance": 1542,
+            "available_credit": 6655,
+            "due_date": "09/15/17"
+        }
+    },
+    {
+        "phonenumber": "30325259327",
+        "zipcode": "30303",
+        "dob": "07/07",
+        "info": {
+            "name": ["Rudolf Roland"],
+            "lastest_date": "06/15/17",
+            "rewards_points": 7.3,
+            "available_notes": [
+                "8255-4455-4433-2233; Access Code 678",
+                "8255-4455-4433-2444; Access Code 789"
+            ],
+            "available_notes_value": "30",
+            "pbpd_available": 3,
+            "current_balance": 452,
+            "statement_balance": 452,
+            "available_credit": 548,
+            "due_date": "07/15/17"
+        }
+    }
+]

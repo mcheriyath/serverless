@@ -1,0 +1,59 @@
+service: serverless-customerlookup-api
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+custom:
+  tableName: 'customers-table-${self:provider.stage}'
+
+provider:
+  name: aws
+  runtime: python2.7
+  environment:
+    DYNAMODB_TABLE: ${self:custom.tableName}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - { "Fn::GetAtt": ["CustomerDynamoDbTable", "Arn"] }
+
+functions:
+  list:
+    handler: customer/list.list
+    events:
+      - http:
+          path: customer
+          method: get
+          cors: true
+
+  get:
+    handler: customer/get.get
+    events:
+      - http:
+          path: customer/{phonenumber}
+          method: get
+          cors: true
+
+resources:
+  Resources:
+    CustomerDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      #DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: phonenumber
+            AttributeType: N
+        KeySchema:
+          -
+            AttributeName: phonenumber
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1 
+          WriteCapacityUnits: 1
+        TableName: ${self:custom.tableName}
